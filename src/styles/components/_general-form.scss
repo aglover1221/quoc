@@ -1,0 +1,61 @@
+.general-form {
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  label {
+    font-weight: 900;
+    color: $purple;
+    display: block;
+  }
+  input,textarea, select {
+    display: block;
+    margin-bottom: 16px;
+    border-radius: 10px;
+    border-color: $green;
+    border-style: solid;
+    padding: 16px;
+    border-width: 2px;
+    box-shadow: .1px .1px 10px $green;
+    width: 100%;
+  }
+  select {
+    height: 60px;
+    -webkit-appearance: none;
+  }
+  input:focus {
+    outline: none;
+  }
+  textarea:focus {
+    outline: none;
+  }
+  select:focus {
+    outline: none;
+  }
+  input[type="submit"], button {
+    border-radius: 10px;
+    border-color: $green;
+    border-style: solid;
+    padding: 16px;
+    border-width: 2px;
+    box-shadow: .1px .1px 10px $green;
+    background-color: $green;
+    color: #fff;
+    font-weight: 900;
+    text-transform: uppercase;
+    border: none;
+    display: inline-block;
+    margin: 0 16px 0 0;
+    width: 100px;
+    &:hover {
+      box-shadow: .1px .1px 40px $green;
+      cursor: pointer;
+    }
+
+  }
+  .field-error {
+    text-transform: uppercase;
+    font-size: 16px;
+  }
+}

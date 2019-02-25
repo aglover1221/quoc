@@ -2,24 +2,37 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import Home from './views/home';
+import Login from './views/login';
+import Signup from './views/signup';
+
+
+import { NavLink, Switch, Route } from 'react-router-dom';
+
+
+class Main extends Component {
+  state = {}
+  render() {
+    return (
+      <Switch>
+        <Route exact path='/' render={(props) => (
+          <Home {...props} />
+        )}></Route>
+        <Route exact path='/login' component={Login} />
+        <Route exact path='/signup' component={Signup} />
+
+      </Switch>
+    );
+  }
+}
 class App extends Component {
+  simpleAction = (event) => {
+   this.props.simpleAction();
+  }
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <Main />
       </div>
     );
   }
